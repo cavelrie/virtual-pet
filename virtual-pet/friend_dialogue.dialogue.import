@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bs3tcrykkecla"
+path="res://.godot/imported/friend_dialogue.dialogue-093d83db2f755e6447e908b68ede4fd3.tres"
+
+[deps]
+
+source_file="res://friend_dialogue.dialogue"
+dest_files=["res://.godot/imported/friend_dialogue.dialogue-093d83db2f755e6447e908b68ede4fd3.tres"]
+
+[params]
+
+defaults=true

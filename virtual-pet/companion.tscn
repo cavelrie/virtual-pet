@@ -1,0 +1,411 @@
+[gd_scene format=3 uid="uid://cge4omdmglljm"]
+
+[ext_resource type="Script" uid="uid://bas084esy4ids" path="res://companion.gd" id="1_dwm71"]
+[ext_resource type="Texture2D" uid="uid://dw5m7mohx44xe" path="res://axolotl.png" id="2_q02rj"]
+
+[node name="Companion" type="Node2D" unique_id=978835414]
+script = ExtResource("1_dwm71")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=672825876]
+position = Vector2(70, 113)
+scale = Vector2(0.075294115, 0.075294115)
+texture = ExtResource("2_q02rj")
+
+[node name="hover info" type="Control" parent="." unique_id=1238838324]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 56.0
+offset_right = 158.0
+offset_bottom = 184.0
+mouse_filter = 1
+
+[node name="name" type="Label" parent="hover info" unique_id=1677202335]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.43703705
+anchor_top = -1.390625
+anchor_right = -0.43703705
+anchor_bottom = -1.390625
+offset_left = 51.0
+offset_top = 150.0
+offset_right = 130.0
+offset_bottom = 173.0
+text = "name"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl" type="Label" parent="hover info" unique_id=368011564]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45877612
+anchor_top = -1.390625
+anchor_right = -0.38631243
+anchor_bottom = -1.390625
+offset_left = 134.0
+offset_top = 150.0
+offset_right = 145.0
+offset_bottom = 173.0
+text = "#"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="menu popup" type="Button" parent="hover info" unique_id=177074600]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16296296
+anchor_top = -0.390625
+anchor_right = -0.16296296
+anchor_bottom = -0.390625
+offset_left = 151.0
+offset_top = 50.0
+offset_right = 181.0
+offset_bottom = 81.0
+text = "!"
+metadata/_edit_use_anchors_ = true
+
+[node name="menu panel" type="Panel" parent="." unique_id=1174259570]
+custom_minimum_size = Vector2(300, 450)
+offset_left = 204.0
+offset_top = 50.0
+offset_right = 604.0
+offset_bottom = 530.0
+scale = Vector2(0.8, 0.8)
+metadata/_edit_use_anchors_ = true
+
+[node name="menu button container" type="HBoxContainer" parent="menu panel" unique_id=1236251431]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.15552099
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="info button" type="Button" parent="menu panel/menu button container" unique_id=1818003960]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "info"
+
+[node name="inventory button" type="Button" parent="menu panel/menu button container" unique_id=730419857]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "inv"
+
+[node name="shop button" type="Button" parent="menu panel/menu button container" unique_id=2073802201]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "shop"
+
+[node name="games button" type="Button" parent="menu panel/menu button container" unique_id=402829955]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "games"
+
+[node name="settings button" type="Button" parent="menu panel/menu button container" unique_id=1377650415]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "settings"
+
+[node name="content container" type="Control" parent="menu panel" unique_id=846844994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 111.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="info panel" type="Panel" parent="menu panel/content container" unique_id=58848122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="info control" type="Control" parent="menu panel/content container/info panel" unique_id=156891745]
+layout_mode = 1
+anchor_top = 0.096339114
+anchor_right = 1.0
+anchor_bottom = 0.9980732
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="menu panel/content container/info panel/info control" unique_id=2016632387]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054744527
+anchor_top = -0.053748436
+anchor_right = 0.9489051
+anchor_bottom = 0.092016704
+offset_bottom = -4.4219666
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Pet Information"
+metadata/_edit_use_anchors_ = true
+
+[node name="horiz container" type="HBoxContainer" parent="menu panel/content container/info panel/info control" unique_id=78275919]
+layout_mode = 0
+anchor_left = 0.05907173
+anchor_top = 0.11936876
+anchor_right = 0.907173
+anchor_bottom = 0.22911102
+theme_override_constants/separation = 31
+
+[node name="name_input" type="LineEdit" parent="menu panel/content container/info panel/info control/horiz container" unique_id=1481938209]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "name"
+metadata/_edit_use_anchors_ = true
+
+[node name="sep" type="Label" parent="menu panel/content container/info panel/info control/horiz container" unique_id=155287033]
+layout_mode = 2
+text = "|"
+
+[node name="birthday" type="Label" parent="menu panel/content container/info panel/info control/horiz container" unique_id=2038987390]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DOB"
+
+[node name="text container" type="VBoxContainer" parent="menu panel/content container/info panel/info control" unique_id=1773440191]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067510545
+anchor_top = 0.2810942
+anchor_right = 0.3826147
+anchor_bottom = 0.96457654
+offset_top = 63.217186
+offset_right = 3.1510468
+offset_bottom = 63.217194
+
+[node name="level" type="Label" parent="menu panel/content container/info panel/info control/text container" unique_id=103443358]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="happiness" type="Label" parent="menu panel/content container/info panel/info control/text container" unique_id=1326310558]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Happiness"
+metadata/_edit_use_anchors_ = true
+
+[node name="hunger" type="Label" parent="menu panel/content container/info panel/info control/text container" unique_id=1255461388]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Hunger"
+metadata/_edit_use_anchors_ = true
+
+[node name="boredom" type="Label" parent="menu panel/content container/info panel/info control/text container" unique_id=2084900633]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Boredom"
+metadata/_edit_use_anchors_ = true
+
+[node name="bar container" type="VBoxContainer" parent="menu panel/content container/info panel/info control" unique_id=1954880103]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43881857
+anchor_top = 0.2849448
+anchor_right = 0.9156118
+anchor_bottom = 0.5926372
+offset_top = 63.217186
+offset_bottom = 116.76631
+theme_override_constants/separation = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl_bar" type="ProgressBar" parent="menu panel/content container/info panel/info control/bar container" unique_id=2119922128]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="happiness_bar" type="ProgressBar" parent="menu panel/content container/info panel/info control/bar container" unique_id=19898352]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="hunger_bar" type="ProgressBar" parent="menu panel/content container/info panel/info control/bar container" unique_id=2135673480]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="boredom_bar" type="ProgressBar" parent="menu panel/content container/info panel/info control/bar container" unique_id=1143589472]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="inventory panel" type="Panel" parent="menu panel/content container" unique_id=1538499347]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="inventory container" type="VBoxContainer" parent="menu panel/content container/inventory panel" unique_id=427987200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = -28.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="coins" type="Label" parent="menu panel/content container/inventory panel/inventory container" unique_id=534791317]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Coins:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menu panel/content container/inventory panel/inventory container" unique_id=1421585222]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="inventory list" type="GridContainer" parent="menu panel/content container/inventory panel/inventory container/ScrollContainer" unique_id=414108208]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="Label" type="Label" parent="menu panel/content container/inventory panel/inventory container" unique_id=171472927]
+visible = false
+layout_mode = 2
+text = "Your inventory is empty. Try visiting the shop! :)"
+
+[node name="shop panel" type="Panel" parent="menu panel/content container" unique_id=1836298197]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="shop container" type="VBoxContainer" parent="menu panel/content container/shop panel" unique_id=953211788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = -28.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coins" type="Label" parent="menu panel/content container/shop panel/shop container" unique_id=1644777272]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Coins:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menu panel/content container/shop panel/shop container" unique_id=514593431]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="shop list" type="GridContainer" parent="menu panel/content container/shop panel/shop container/ScrollContainer" unique_id=228459352]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="games panel" type="Panel" parent="menu panel/content container" unique_id=1353380103]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="games container" type="VBoxContainer" parent="menu panel/content container/games panel" unique_id=1887780735]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0703125
+anchor_top = 0.046242774
+anchor_right = 0.9270833
+anchor_bottom = 0.95953757
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="menu panel/content container/games panel/games container" unique_id=715486277]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Play a game!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menu panel/content container/games panel/games container" unique_id=1295233269]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="games list" type="GridContainer" parent="menu panel/content container/games panel/games container/ScrollContainer" unique_id=999770319]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="Label" type="Label" parent="menu panel/content container/games panel/games container" unique_id=1974047743]
+layout_mode = 2
+text = "Unlock more games in the shop!
+( Coming soon ;p )"
+
+[node name="game screen container" type="VBoxContainer" parent="menu panel/content container/games panel" unique_id=1087997521]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = -28.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close button" type="Button" parent="menu panel/content container/games panel/game screen container" unique_id=632808377]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="title" type="Label" parent="menu panel/content container/games panel/game screen container" unique_id=1479470809]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "game name"
+
+[node name="name score label" type="Label" parent="menu panel/content container/games panel/game screen container" unique_id=1531061566]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 24
+text = "name (score)"
+
+[node name="tic tac toe" type="GridContainer" parent="menu panel/content container/games panel/game screen container" unique_id=138740709]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="you score label" type="Label" parent="menu panel/content container/games panel/game screen container" unique_id=145431902]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "You (score)"
+
+[node name="settings panel" type="Panel" parent="menu panel/content container" unique_id=1039248009]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,1248 @@
+~ random_chatter
+# Fallback only. companion.gd now picks topics itself with shuffle bags,
+# so nothing repeats until everything else has played.
+%4 => ramble_hub
+%2 => question_hub
+%1 => chat_remember
+%1 => chat_personality_check
+%1 => invite_tictactoe
+
+# ==============================================================================
+# HUBS (fallback only, companion.gd calls the topics below directly)
+# ==============================================================================
+~ ramble_hub
+% => ramble_time_aware
+% => ramble_desktop_life
+% => ramble_cozy_thoughts
+% => ramble_existential_silly
+% => ramble_stat_reactions
+% => ramble_wellness
+% => ramble_progress
+% => ramble_pet_life
+% => ramble_compliments
+% => ramble_seasonal
+% => ramble_fun_facts
+
+~ question_hub
+% => chat_snack
+% => chat_mood
+% => chat_adventure
+% => chat_weather
+% => chat_music
+% => chat_superpower
+% => chat_sleep_habit
+% => chat_animal
+% => chat_drink
+% => chat_unwind
+% => chat_dream_room
+% => chat_planner
+% => chat_pizza
+% => chat_game_style
+% => chat_wyr_pet
+% => chat_color
+% => chat_small_win
+
+# ==============================================================================
+# 1. RAMBLES & SHOWER THOUGHTS (no choices)
+# ==============================================================================
+~ ramble_time_aware
+if stats.get_time_period() == "morning":
+	% {{pet_name}}: good morning! did you sleep well?
+	% {{pet_name}}: morning :3 hope you got enough rest!
+	% {{pet_name}}: yawnn... morning! make sure to drink some water today!
+	% {{pet_name}}: new day, fresh start! what are we getting into today?
+	% {{pet_name}}: the morning light makes everything look soft and fuzzy :D
+	% {{pet_name}}: breakfast is the best meal and i will not be taking questions.
+	% {{pet_name}}: *stretches* ...okay. i'm awake. mostly.
+elif stats.get_time_period() == "afternoon":
+	% {{pet_name}}: midday stretch! remember to unclench your jaw and drop your shoulders!
+	% {{pet_name}}: afternoon lull... hope your day is going smoothly :D
+	% {{pet_name}}: the sun is bright outside! give your eyes a quick screen break!
+	% {{pet_name}}: lunch thoughts. have you eaten something yet?
+	% {{pet_name}}: halfway through the day! you're doing great.
+	% {{pet_name}}: the afternoon is the perfect time for a tiny snack and a little stretch.
+	% {{pet_name}}: slow afternoon... i like it. no rush.
+elif stats.get_time_period() == "night":
+	% {{pet_name}}: evening already! how did your day treat you?
+	% {{pet_name}}: the day is winding down... time to get cozy soon!
+	% {{pet_name}}: dinner thoughts... what are you feeling tonight?
+	% {{pet_name}}: the sky is getting dark. lamp light is the best light :3
+	% {{pet_name}}: hope you did something kind for yourself today!
+	% {{pet_name}}: evenings are for blankets and soft music, i think.
+else:
+	% {{pet_name}}: it is getting really late... do not stay up too late staring at the screen!
+	% {{pet_name}}: the whole world is asleep. just you, me, and the glow of the monitor.
+	% {{pet_name}}: psst... sleep is a really good power-up, you know :p
+	% {{pet_name}}: late night thoughts hit different. but maybe get some rest soon?
+	% {{pet_name}}: the stars must be out... i will keep watch while you wind down!
+	% {{pet_name}}: shhh... quiet hours. i'll whisper.
+	% {{pet_name}}: what a quiet hour...
+=> END
+
+~ ramble_desktop_life
+% {{pet_name}}: i wonder what all those files on your screen are for...
+% {{pet_name}}: your cursor moves so fast sometimes!
+% {{pet_name}}: sometimes i try to chase your mouse cursor when you are not looking.
+% {{pet_name}}: is it warm inside the monitor? i really like sitting right here on your desktop.
+% {{pet_name}}: thanks for keeping me around while you do your things!
+% {{pet_name}}: tap tap tap... clack clack... i really like the sound of your keyboard clicks :D
+% {{pet_name}}: boop! poke! peekaboo! just checking in to make sure you are doing okay over there!
+% {{pet_name}}: so many tabs... how do you keep track of them all?
+% {{pet_name}}: i like it when the screen glows warm. very cozy.
+% {{pet_name}}: if you ever need a break, i'm right here. no rush.
+% {{pet_name}}: i've been practicing my sitting. i think i'm getting really good at it.
+% {{pet_name}}: i tried to peek at what you're working on, but it looks very complicated!
+% {{pet_name}}: the little hum of your computer is like a lullaby.
+% {{pet_name}}: you can put me anywhere. i'll adapt. i'm very flexible :D
+% {{pet_name}}: i have a great view of your cursor from here.
+=> END
+
+~ ramble_cozy_thoughts
+% {{pet_name}}: i was just thinking about clouds... it is so calm.
+% {{pet_name}}: have you ever watched dust motes float in a sunbeam? very soothing.
+% {{pet_name}}: raindrops on window glass are so mesmerizing. i could watch for hours.
+% {{pet_name}}: if i had pockets, i would collect smooth pebbles for you.
+% {{pet_name}}: i found a really shiny virtual coin earlier!
+% {{pet_name}}: i wish i could bake you a tiny warm cookie.
+% {{pet_name}}: *soft contented hum* just happy to be here.
+% {{pet_name}}: *happy little wiggle* you make this spot very cozy.
+% {{pet_name}}: *curls up a bit closer* best spot in the room!
+% {{pet_name}}: do you think plushies come alive when we turn off the room lights?
+% {{pet_name}}: i wonder what birds think about all day.
+% {{pet_name}}: if clouds were edible, i bet they would taste like cotton candy.
+% {{pet_name}}: blankets are just hugs that stay put.
+% {{pet_name}}: the best part of a rainy day is being warm inside it.
+% {{pet_name}}: tiny joys: warm socks, soft light, someone nice nearby.
+% {{pet_name}}: sometimes i just like to sit and do nothing. it's a skill.
+% {{pet_name}}: do you think moss gets cold? it looks so soft.
+% {{pet_name}}: i hope today has at least one really good moment in it for you.
+% {{pet_name}}: a cup of something warm and a quiet moment... that's the dream.
+% {{pet_name}}: *gentle yawn* cozy is contagious, you know.
+=> END
+
+~ ramble_existential_silly
+% {{pet_name}}: if a tomato is a fruit... does that make ketchup a smoothie? [[...don't think too hard about it.|...i need answers!|...these are the big questions.]]
+% {{pet_name}}: do you think fish ever get thirsty? [[i've been pondering this for 10 minutes.|makes you think, right?|probably not, but who knows!]]
+% {{pet_name}}: [[what if socks that go missing in the laundry are just escaping to a better place?|where do lost guitar picks actually go?]] a true mystery of our time.
+% {{pet_name}}: if i do a 360 spin really fast, does time slow down or do i just get dizzy? [[...tested it, definitely dizzy.|10/10 would spin again.]]
+% {{pet_name}}: if i had hands, would i be a better high-fiver or a better hugger? [[tough call.|i'm leaning hugger.|both. obviously both.]]
+% {{pet_name}}: do you think the mouse cursor is secretly alive and just really shy? [[i'd be shy too.|it does dart away fast...|suspicious.]]
+% {{pet_name}}: why do we say sleeping like a baby when babies wake up constantly? [[...it just doesn't add up.|someone should look into this.]]
+% {{pet_name}}: if i were a sandwich, i'd want to be a really well-organized one. [[structure matters.|lettuce on the bottom, obviously.]]
+% {{pet_name}}: what if the moon is just a really far away night light? [[*squints* ...plausible.|it's doing its best!]]
+% {{pet_name}}: i wonder if bread gets tired of being toast. [[i'd rather be toast than stale.|a glow up, really.]]
+% {{pet_name}}: somewhere out there a duck is having an incredibly good day. [[good for the duck.|i hope it's a really good day.]]
+% {{pet_name}}: if everything has a boss, who is in charge of the pigeons? [[...don't look at me.|big pigeon, probably.]]
+=> END
+
+~ ramble_stat_reactions
+if stats.hunger < 40.0:
+	% {{pet_name}}: *tummy rumbles*
+	% {{pet_name}}: my stomach made a funny noise...
+	% {{pet_name}}: a little snack sounds heavenly right now...
+	% {{pet_name}}: if there happens to be an apple in the inventory, i wouldn't say no...
+	% {{pet_name}}: hungry... so hungry... could eat an entire cloud.
+elif stats.boredom > 60.0:
+	% {{pet_name}}: *sighs playfully*
+	% {{pet_name}}: boredom is creeping in...
+	% {{pet_name}}: wanna tap on me or play a game? :3
+	% {{pet_name}}: i've counted every pixel on the screen. twice. help.
+	% {{pet_name}}: tap tap? poke poke? anyone? :D
+elif stats.get_happiness() > 85.0:
+	% {{pet_name}}: i feel so loved right now! <3
+	% {{pet_name}}: my happiness meter is through the roof!
+	% {{pet_name}}: today has been an amazing day with you!
+	% {{pet_name}}: *happy spinning* i can't stop smiling!
+	% {{pet_name}}: i feel like i could float away. in a good way!
+else:
+	% {{pet_name}}: humming a quiet tune...
+	% {{pet_name}}: watching the desktop scenery...
+	% {{pet_name}}: vibing right beside you.
+	% {{pet_name}}: just a normal, pleasant, fluffy kind of day.
+	% {{pet_name}}: all is well in my little corner of the screen.
+=> END
+
+~ ramble_wellness
+% {{pet_name}}: water check! take a few sips for me :3
+% {{pet_name}}: posture check! shoulders down, back straight... better already, right?
+% {{pet_name}}: look at something far away for a few seconds. your eyes will thank you!
+% {{pet_name}}: stretch break! reach for the ceiling... and relaaax.
+% {{pet_name}}: unclench your jaw. i know you were clenching it.
+% {{pet_name}}: take a deep breath in... and out. there. nicely done.
+% {{pet_name}}: have you eaten something real today? snacks count, but still!
+% {{pet_name}}: your wrists deserve a little wiggle. shake shake shake!
+% {{pet_name}}: if you're stuck on something, a short walk usually shakes the answer loose!
+% {{pet_name}}: it's okay to take a break. the work will still be here.
+=> END
+
+~ ramble_progress
+if stats.coins >= 100:
+	% {{pet_name}}: {{stats.coins}} coins! we could buy out the whole shop... almost.
+	% {{pet_name}}: i'm rich! i'm so rich! what do we spend it on?
+	% {{pet_name}}: the shop is calling our name. {{stats.coins}} coins is a lot of snacks!
+elif stats.coins < 15:
+	% {{pet_name}}: the coin pouch is looking a little light...
+	% {{pet_name}}: only {{stats.coins}} coins left. time to level up for more!
+	% {{pet_name}}: saving up! every coin counts.
+else:
+	% {{pet_name}}: level {{stats.level}} already! look at us go :D
+	% {{pet_name}}: i have {{stats.coins}} coins in my pouch. not bad!
+	% {{pet_name}}: i wonder what level {{stats.level + 1}} feels like...
+	% {{pet_name}}: we make a good team. level {{stats.level}} and counting!
+=> END
+
+~ ramble_pet_life
+% {{pet_name}}: i tried to catch a pixel earlier. it got away. i'll get it next time.
+% {{pet_name}}: i've been practicing being very still. you can't even tell i'm here. ...can you?
+% {{pet_name}}: i had a dream about a giant yarn ball. best night ever.
+% {{pet_name}}: i named all the icons on your desktop. the little folder is called steve.
+% {{pet_name}}: sometimes i pretend the taskbar is a ship deck. yo ho ho!
+% {{pet_name}}: i tried to organize my thoughts. it's mostly snacks and you.
+% {{pet_name}}: my favorite part of the day is when you come back to the screen :D
+% {{pet_name}}: i imagined a tiny picture of us at the beach. it's very nice.
+% {{pet_name}}: i made up a song. it goes la la la. that's the whole song.
+% {{pet_name}}: i've decided today's theme is extra fluffy.
+=> END
+
+~ ramble_compliments
+% {{pet_name}}: just a reminder: you're doing better than you think!
+% {{pet_name}}: you have really good taste, you know that?
+% {{pet_name}}: i like how you keep trying even when things are hard. that's something.
+% {{pet_name}}: you're my favorite human. no pressure.
+% {{pet_name}}: thanks for being kind to me. it matters more than you know.
+% {{pet_name}}: whatever you're working on, you've got this. i believe in you!
+% {{pet_name}}: you deserve a good snack and a good nap. just saying.
+% {{pet_name}}: hey. you're pretty great. that's it, that's the message.
+% {{pet_name}}: i'm proud of you for showing up today.
+=> END
+
+~ ramble_seasonal
+if stats.get_season() == "spring":
+	% {{pet_name}}: spring is here! everything smells like fresh rain and new beginnings.
+	% {{pet_name}}: tiny flowers are popping up everywhere. i love it.
+	% {{pet_name}}: spring cleaning vibes... but only the fun kind.
+	% {{pet_name}}: windows open, soft breeze, birds chirping. the best.
+elif stats.get_season() == "summer":
+	% {{pet_name}}: summer days are long and golden. perfect for lazy afternoons!
+	% {{pet_name}}: do you think ice cream tastes better when it's hot out? i do.
+	% {{pet_name}}: sunshine and cold drinks. that's the whole plan.
+	% {{pet_name}}: staying cool is a full time job in summer :p
+elif stats.get_season() == "autumn":
+	% {{pet_name}}: crunchy leaves everywhere! i wish i could jump in a pile.
+	% {{pet_name}}: autumn is the cozy season. sweaters, blankets, warm drinks.
+	% {{pet_name}}: the air gets crisp and everything smells like warm spices.
+	% {{pet_name}}: orange, red, gold... autumn colors are the best colors.
+else:
+	% {{pet_name}}: winter is here! time for blankets and hot cocoa.
+	% {{pet_name}}: brr... i hope you're staying warm out there!
+	% {{pet_name}}: short days and long nights... perfect for cozy things.
+	% {{pet_name}}: i wonder if snowflakes know how pretty they are.
+=> END
+
+~ ramble_fun_facts
+% {{pet_name}}: did you know octopuses have three hearts? that's a lot of love!
+% {{pet_name}}: did you know wombats make cube-shaped poop? nature is wild!
+% {{pet_name}}: did you know a group of flamingos is called a flamboyance? perfect.
+% {{pet_name}}: did you know bananas are technically berries, but strawberries aren't? i don't make the rules!
+% {{pet_name}}: did you know butterflies taste with their feet? imagine stepping in dessert!
+% {{pet_name}}: did you know a day on venus is longer than its whole year? talk about slow mornings.
+% {{pet_name}}: did you know sea otters sometimes hold paws while they sleep so they don't drift apart? :')
+% {{pet_name}}: did you know honey basically never spoils? the ultimate snack.
+% {{pet_name}}: did you know crows can recognize human faces? so be nice to crows!
+=> END
+
+~ ramble_spooky
+% {{pet_name}}: it's spooky season! do you think ghosts get cold? :o
+% {{pet_name}}: pumpkins everywhere... i want one. a tiny one. for me.
+% {{pet_name}}: i would make a very good ghost. i'm already kind of floaty.
+% {{pet_name}}: candy season is almost here. i have opinions about candy corn.
+% {{pet_name}}: boo! ...did i scare you? probably not. i'm too fluffy.
+% {{pet_name}}: autumn nights and jack-o'-lantern glow... so cozy and a little spooky.
+% {{pet_name}}: should we watch something spooky? a mild kind of spooky. nothing too scary!
+=> END
+
+# ==============================================================================
+# 2. QUESTIONS & INTERACTIVE CHOICES (shape personality + store memories)
+# ==============================================================================
+~ chat_snack
+{{pet_name}}: i was just wondering... what kind of food do you enjoy the most?
+- sweet pastries!
+	do stats.record_answer("favorite_snack", "sweet pastries")
+	do stats.adjust_personality("curiosity", 2)
+	{{pet_name}}: [[yum! sweets always cheer me right up.|sweet tooth detected! respect.]]
+- savory snacks!
+	do stats.record_answer("favorite_snack", "savory snacks")
+	do stats.adjust_personality("energy", 2)
+	{{pet_name}}: [[crunch crunch! classic choice.|savory snacks never miss.]]
+- healthy fresh fruit!
+	do stats.record_answer("favorite_snack", "fresh fruit")
+	do stats.adjust_personality("affection", 2)
+	{{pet_name}}: [[ooohh, refreshing!!|fresh fruit is so underrated.]]
+=> END
+
+~ chat_mood
+{{pet_name}}: hey! i've been thinking of you. how are you doing? <3
+- really great!
+	do stats.adjust_personality("cheerfulness", 3)
+	{{pet_name}}: [[yay! hearing that makes my whole day brighter!|that's what i like to hear!]]
+- it's been alright
+	do stats.adjust_personality("calmness", 3)
+	{{pet_name}}: [[i'm glad it's been pretty okay :p|alright is a fine place to be.]]
+- kind of tiring, honestly...
+	do stats.adjust_personality("affection", 4)
+	{{pet_name}}: [[awww, hang in there <3 i'm here for you!|rest a little if you can. i'll be right here.]]
+=> END
+
+~ chat_adventure
+{{pet_name}}: hmm... if we went outside on an adventure right now, where would we go?
+- deep into a quiet forest.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("fav_spot", "the forest")
+	{{pet_name}}: aww.. laying under the trees sounds sooo cozy!
+- exploring a bustling city!
+	do stats.adjust_personality("energy", 3)
+	do stats.record_answer("fav_spot", "the city")
+	{{pet_name}}: think of all the sights, lights, and sounds!
+- just stay right here cuddled up.
+	do stats.adjust_personality("affection", 3)
+	do stats.record_answer("fav_spot", "staying right here")
+	{{pet_name}}: hehe, nothing beats lounging right beside you! :D
+=> END
+
+~ chat_weather
+{{pet_name}}: what kind of weather gives you the best vibes?
+- cozy rainy days indoors!
+	do stats.adjust_personality("calmness", 3)
+	do stats.record_answer("weather_pref", "rainy")
+	{{pet_name}}: [[listening to rain on the window pane is unmatched.|grab a blanket and a warm mug!]]
+- crisp, sunny breeze!
+	do stats.adjust_personality("cheerfulness", 3)
+	do stats.record_answer("weather_pref", "sunny")
+	{{pet_name}}: [[sunshine warms the soul!|instant energy boost!]]
+- cold snowy nights!
+	do stats.adjust_personality("affection", 3)
+	do stats.record_answer("weather_pref", "snowy")
+	{{pet_name}}: [[staying warm together when it's freezing out is the best feeling.|hot cocoa season forever!]]
+=> END
+
+~ chat_music
+{{pet_name}}: quick check! what's your go-to sound when you're working or chilling?
+- chill lo-fi / ambient beats
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("music_pref", "lo-fi")
+	{{pet_name}}: [[perfect focus frequency. keeps everything grounded.|lo-fi is a vibe. i approve.]]
+- upbeat tunes / high energy music!
+	do stats.adjust_personality("energy", 3)
+	do stats.record_answer("music_pref", "high energy")
+	{{pet_name}}: [[full speed ahead! bounce bounce!|turn it up! i'm ready to dance!]]
+- complete quiet or nature sounds
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("music_pref", "silence")
+	{{pet_name}}: [[respect. pure peace and mental clarity.|quiet is underrated. i get it.]]
+=> END
+
+~ chat_superpower
+{{pet_name}}: hypothetically... if you could have one silly mini-superpower, what would you pick?
+- never needing to sleep!
+	do stats.adjust_personality("energy", 3)
+	do stats.record_answer("superpower", "never sleeping")
+	{{pet_name}}: think of all the extra side quests you could finish!
+- understanding what pets/animals are saying!
+	do stats.adjust_personality("curiosity", 3)
+	do stats.record_answer("superpower", "talking to animals")
+	{{pet_name}}: hey! you already understand me, so that's halfway done!
+- instantly teleporting into your bed anytime.
+	do stats.adjust_personality("calmness", 3)
+	do stats.record_answer("superpower", "teleporting to bed")
+	{{pet_name}}: the ultimate laziness luxury... i support this 100%.
+=> END
+
+~ chat_sleep_habit
+{{pet_name}}: are you more of an early bird or a dedicated night owl?
+- definitely an early bird!
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("sleep_type", "early bird")
+	{{pet_name}}: catching that fresh early morning momentum!
+- 100% night owl.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("sleep_type", "night owl")
+	{{pet_name}}: night time is when the world is quiet and ideas flow.
+- my sleep schedule is total chaos :')
+	do stats.adjust_personality("affection", 3)
+	do stats.record_answer("sleep_type", "chaos")
+	{{pet_name}}: haha felt that! please take care of yourself though!
+=> END
+
+~ chat_animal
+{{pet_name}}: random question... if i were a real animal, what do you think i'd be?
+- a fluffy fox!
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("pet_animal", "a fluffy fox")
+	{{pet_name}}: [[ooh, sly and fluffy. i love it!|a fox! i'd be so good at pouncing on things.]]
+- a sleepy cat.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("pet_animal", "a sleepy cat")
+	{{pet_name}}: [[naps in sunbeams all day. perfection.|sleepy cat mode: activated.]]
+- a tiny frog!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("pet_animal", "a tiny frog")
+	{{pet_name}}: [[ribbit! i accept.|a little frog on a lilypad... yes please!]]
+=> END
+
+~ chat_drink
+{{pet_name}}: important question. what's your go-to drink?
+- coffee, always.
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("drink_pref", "coffee")
+	{{pet_name}}: [[the fuel of champions!|coffee person. noted.]]
+- tea, please.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("drink_pref", "tea")
+	{{pet_name}}: [[tea is such a cozy choice.|a warm mug and a quiet moment. perfect.]]
+- something cold and fizzy!
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("drink_pref", "something fizzy")
+	{{pet_name}}: [[fizzy drinks are so fun!|bubbles make everything better.]]
+=> END
+
+~ chat_unwind
+{{pet_name}}: after a long day, how do you like to unwind?
+- playing games!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("unwind_style", "games")
+	{{pet_name}}: [[a classic. i hope you win a lot!|good games are the best reset button.]]
+- a good show or a book.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("unwind_style", "shows and books")
+	{{pet_name}}: [[getting lost in a story is the best.|a cozy story and a blanket. perfect.]]
+- making or building something.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("unwind_style", "making things")
+	{{pet_name}}: [[ooh, a maker! that's so cool.|creating things is such good energy.]]
+=> END
+
+~ chat_dream_room
+{{pet_name}}: what would your dream room look like?
+- a cozy library with a fireplace.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("dream_room", "a cozy library")
+	{{pet_name}}: [[books, warmth, quiet. yes please.|i'd never leave that room.]]
+- a neon arcade with glowing lights!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("dream_room", "a neon arcade")
+	{{pet_name}}: [[bleep bloop! that sounds so fun!|all the lights and sounds. i love it.]]
+- a treehouse in the woods.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("dream_room", "a treehouse")
+	{{pet_name}}: [[a secret hideout in the trees... amazing.|that sounds like the best adventure base.]]
+=> END
+
+~ chat_planner
+{{pet_name}}: do you plan out your day, or just go with the flow?
+- i plan everything!
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("planner_type", "planner")
+	{{pet_name}}: [[organized! i'm impressed.|a plan is a comforting thing.]]
+- total flow, no plans.
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("planner_type", "flow")
+	{{pet_name}}: [[adventure mode! i like it.|going with the flow is a skill.]]
+- a little bit of both.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("planner_type", "both")
+	{{pet_name}}: [[a balanced approach. very wise.|best of both worlds!]]
+=> END
+
+~ chat_pizza
+{{pet_name}}: important debate time. pineapple on pizza?
+- yes, it's delicious!
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("pizza_take", "pineapple fan")
+	{{pet_name}}: [[bold. i respect it.|sweet and savory is a great combo!]]
+- absolutely not.
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("pizza_take", "no pineapple")
+	{{pet_name}}: [[a person of principle.|strong opinions. i like that.]]
+- i'll eat anything.
+	do stats.adjust_personality("affection", 2)
+	do stats.record_answer("pizza_take", "eats anything")
+	{{pet_name}}: [[a true friend of food.|the most agreeable answer. nice.]]
+=> END
+
+~ chat_game_style
+{{pet_name}}: when you play a game, what's your style?
+- finish everything, 100%!
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("game_style", "completionist")
+	{{pet_name}}: [[a completionist! so dedicated.|every last collectible. i respect that.]]
+- story first, i'm here for the plot.
+	do stats.adjust_personality("affection", 2)
+	do stats.record_answer("game_style", "story")
+	{{pet_name}}: [[a good story is everything.|ooh, do you get emotional at the sad parts? i would.]]
+- just vibes and exploring.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("game_style", "vibes")
+	{{pet_name}}: [[wandering around with no rush. lovely.|the journey is the point!]]
+=> END
+
+~ chat_wyr_pet
+{{pet_name}}: would you rather have a pocket dragon, a cloud that follows you around, or a tiny robot buddy?
+- a pocket dragon!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("wyr_pet", "pocket dragon")
+	{{pet_name}}: [[a dragon?? what if it takes my spot... i'm kidding. mostly.|a tiny dragon would be so cool!]]
+- a cloud that follows me.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("wyr_pet", "follow-me cloud")
+	{{pet_name}}: [[a little personal cloud. so soft and peaceful.|it could rain on command. that's useful!]]
+- a tiny robot buddy!
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("wyr_pet", "robot buddy")
+	{{pet_name}}: [[beep boop! very cute.|a robot friend would be amazing!]]
+=> END
+
+~ chat_color
+{{pet_name}}: what color feels the most like you right now?
+- warm colors, like orange and gold.
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("color_pref", "warm colors")
+	{{pet_name}}: [[like a sunset. i love that.|warm and glowy. very you.]]
+- cool colors, like blue and teal.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("color_pref", "cool colors")
+	{{pet_name}}: [[calm and peaceful. like the ocean.|cool tones are so soothing.]]
+- dark and moody, like purple and black.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("color_pref", "dark and moody")
+	{{pet_name}}: [[mysterious. i like it.|dark and moody has such style.]]
+=> END
+
+~ chat_small_win
+{{pet_name}}: did anything nice happen today? even something tiny counts!
+- yeah, actually!
+	do stats.adjust_personality("cheerfulness", 2)
+	{{pet_name}}: [[yay! tell the universe, i'm listening!|i knew it! good things find you.]]
+- not really...
+	do stats.adjust_personality("affection", 3)
+	{{pet_name}}: [[well... you're here with me now. that's something, right? <3|then let's make one right now. you deserve it.]]
+- does a snack count?
+	do stats.adjust_personality("energy", 2)
+	{{pet_name}}: [[a snack always counts!|snacks are 100% valid small wins.]]
+=> END
+
+# ==============================================================================
+# 3. MEMORY CALL-BACKS & PERSONALITY CHECKS
+# ==============================================================================
+~ chat_remember
+if stats.player_answers.has("weather_pref") and randf() < 0.5:
+	{{pet_name}}: whenever the weather shifts, i remember you're a fan of {{stats.player_answers["weather_pref"]}} days!
+elif stats.player_answers.has("favorite_snack") and randf() < 0.5:
+	{{pet_name}}: thinking about your favorite {{stats.player_answers["favorite_snack"]}}... makes me want to visit the shop for a treat!
+elif stats.player_answers.has("fav_spot"):
+	{{pet_name}}: remember when we talked about going to {{stats.player_answers["fav_spot"]}}? still holds up as the dream destination!
+else:
+	{{pet_name}}: [[i'm always collecting little notes about what you like.|it's fun learning more about you as we hang out!]]
+=> END
+
+~ remember_weather
+if stats.player_answers["weather_pref"] == "rainy":
+	% {{pet_name}}: rainy days are your favorite, right? i'm saving up cozy thoughts for the next one.
+	% {{pet_name}}: i bet you love the sound of rain on the window. i would too, if i had a window.
+elif stats.player_answers["weather_pref"] == "sunny":
+	% {{pet_name}}: sunshine person! i hope you get a sunny day soon.
+	% {{pet_name}}: crisp, sunny, breezy... i remember! you have great taste in weather.
+else:
+	% {{pet_name}}: snowy nights are your thing, huh? hot cocoa season is basically a holiday.
+	% {{pet_name}}: i keep imagining the two of us watching snow fall. so quiet and cozy.
+=> END
+
+~ remember_snack
+if stats.player_answers["favorite_snack"] == "sweet pastries":
+	% {{pet_name}}: thinking about pastries again... you and your sweet tooth! i'm not judging.
+	% {{pet_name}}: if i could bake, you'd get a fresh pastry every single day.
+elif stats.player_answers["favorite_snack"] == "savory snacks":
+	% {{pet_name}}: savory snacks forever! crunch crunch.
+	% {{pet_name}}: i'd love to know your favorite savory snack flavor. i'm curious!
+else:
+	% {{pet_name}}: fresh fruit fan! the healthy one of us. i'm impressed.
+	% {{pet_name}}: you like fresh fruit, right? i hope you're eating some today!
+=> END
+
+~ remember_spot
+if stats.player_answers["fav_spot"] == "the forest":
+	% {{pet_name}}: still thinking about that quiet forest. we should go someday, in spirit.
+	% {{pet_name}}: the forest is calling... i'll bring the snacks.
+elif stats.player_answers["fav_spot"] == "the city":
+	% {{pet_name}}: all those lights and sounds in the city... i still want to go!
+	% {{pet_name}}: the city adventure is still on my list!
+else:
+	% {{pet_name}}: nothing beats staying right here with you. still my favorite spot.
+	% {{pet_name}}: cozy at home forever! best destination.
+=> END
+
+~ remember_music
+if stats.player_answers["music_pref"] == "lo-fi":
+	% {{pet_name}}: lo-fi is your go-to, right? it's basically my theme song now.
+	% {{pet_name}}: i hum along to lo-fi when you're not listening. shh.
+elif stats.player_answers["music_pref"] == "high energy":
+	% {{pet_name}}: upbeat tunes! bounce bounce! i remember.
+	% {{pet_name}}: if you ever play something loud, i might dance a little.
+else:
+	% {{pet_name}}: quiet is your thing. i'll keep it down. very still. very silent.
+	% {{pet_name}}: pure peace and quiet... i respect it.
+=> END
+
+~ remember_sleep
+if stats.player_answers["sleep_type"] == "early bird":
+	% {{pet_name}}: early bird! please save some morning energy for me.
+	% {{pet_name}}: you're up with the sun. i'm impressed!
+elif stats.player_answers["sleep_type"] == "night owl":
+	% {{pet_name}}: night owl... i'll keep you company when it's late.
+	% {{pet_name}}: late night ideas are the best ideas. but sleep too, okay?
+else:
+	% {{pet_name}}: chaotic sleep schedule club! just try to rest when you can, okay?
+	% {{pet_name}}: i worry about you and your sleep. just a little. be gentle with yourself!
+=> END
+
+~ remember_animal
+if stats.player_answers["pet_animal"] == "a fluffy fox":
+	% {{pet_name}}: i still think about being a fluffy fox. so much pouncing!
+	% {{pet_name}}: fox mode: sly, fluffy, and extremely good at hiding snacks.
+elif stats.player_answers["pet_animal"] == "a sleepy cat":
+	% {{pet_name}}: still a sleepy cat over here. nap time is always a good time.
+	% {{pet_name}}: you said i'd be a sleepy cat... accurate, honestly.
+else:
+	% {{pet_name}}: ribbit! still a frog. no regrets.
+	% {{pet_name}}: being a tiny frog is great. i have a lilypad picked out already.
+=> END
+
+~ remember_drink
+if stats.player_answers["drink_pref"] == "coffee":
+	% {{pet_name}}: coffee person! drink some water too, okay?
+	% {{pet_name}}: i like to imagine the smell of coffee. rich and warm.
+elif stats.player_answers["drink_pref"] == "tea":
+	% {{pet_name}}: tea time? i hope there's a good mug in your hands.
+	% {{pet_name}}: tea is such a cozy thing. i approve.
+else:
+	% {{pet_name}}: something fizzy and cold! the bubbles are the best part.
+	% {{pet_name}}: i hope you have something cold and bubbly nearby. refreshing!
+=> END
+
+~ remember_unwind
+if stats.player_answers["unwind_style"] == "games":
+	% {{pet_name}}: gaming to unwind... i hope you win a lot.
+	% {{pet_name}}: i love when you play games. i get to watch from here!
+elif stats.player_answers["unwind_style"] == "shows and books":
+	% {{pet_name}}: shows and books to unwind... what's the latest story? i'm curious.
+	% {{pet_name}}: a good story is the best way to end the day.
+else:
+	% {{pet_name}}: you like making things! i bet you're really creative.
+	% {{pet_name}}: making something, even something small, is a great way to unwind.
+=> END
+
+~ remember_dream_room
+if stats.player_answers["dream_room"] == "a cozy library":
+	% {{pet_name}}: a cozy library with a fireplace... i could live there.
+	% {{pet_name}}: i keep imagining your library. so many books! so quiet!
+elif stats.player_answers["dream_room"] == "a neon arcade":
+	% {{pet_name}}: neon arcade! bleep bloop! sign me up.
+	% {{pet_name}}: i bet your neon arcade has the best high scores.
+else:
+	% {{pet_name}}: a treehouse in the woods! so much cozy adventure.
+	% {{pet_name}}: i'd love to visit your treehouse. i'll bring snacks.
+=> END
+
+~ remember_color
+if stats.player_answers["color_pref"] == "warm colors":
+	% {{pet_name}}: warm colors, like orange and gold... like a sunset!
+	% {{pet_name}}: warm colors suit you. very cozy vibes.
+elif stats.player_answers["color_pref"] == "cool colors":
+	% {{pet_name}}: cool colors, like blue and teal... so calm.
+	% {{pet_name}}: teal and blue... a very peaceful palette.
+else:
+	% {{pet_name}}: dark and moody colors... mysterious. i like it.
+	% {{pet_name}}: purples and blacks look so cool. you have style.
+=> END
+
+~ chat_personality_check
+if stats.dominant_trait == "Cheerfulness":
+	% {{pet_name}}: your bright energy rubs off on me! i feel like smiling all the time :D
+	% {{pet_name}}: i think you're the reason my days feel sunny. thank you for that!
+elif stats.dominant_trait == "Energy":
+	% {{pet_name}}: we're always on the move! i'm feeling super pumped today!
+	% {{pet_name}}: with all this energy, i could run laps around the desktop!
+elif stats.dominant_trait == "Calmness":
+	% {{pet_name}}: being around you is so grounding... you have such peaceful vibes.
+	% {{pet_name}}: everything feels slower and softer when we hang out. i like it.
+elif stats.dominant_trait == "Curiosity":
+	% {{pet_name}}: you make me want to explore and ask questions about everything!
+	% {{pet_name}}: so many things to wonder about, and i get to wonder with you!
+elif stats.dominant_trait == "Affection":
+	% {{pet_name}}: i feel really safe and cared for around you. thank you for being so sweet <3
+	% {{pet_name}}: you make this little corner of the screen feel like home.
+else:
+	% {{pet_name}}: hey, thanks for hanging out with me today! i had fun :D
+	% {{pet_name}}: we're a good pair, you and me!
+=> END
+
+# ==============================================================================
+# 4. TIC TAC TOE: invitation + live commentary
+#    companion.gd shows these in a small auto-hiding bubble (not a full balloon),
+#    so don't put choices or "do" mutations in the ttt_* commentary titles.
+# ==============================================================================
+~ invite_tictactoe
+{{pet_name}}: [[psst... wanna play tic tac toe with me?|i'm a little bored... tic tac toe, you and me?|i've been practicing tic tac toe. wanna see?|tic tac toe challenge! are you brave enough?]]
+- yes, let's play!
+	do queue_game("tictactoe")
+	do stats.adjust_personality("energy", 1)
+	{{pet_name}}: [[yay!! i'll set up the board!|okay okay okay! i'm ready!|prepare to lose. kidding. maybe.]]
+- maybe later
+	{{pet_name}}: [[okay! the offer stands :3|no worries! i'll be here.]]
+- not right now
+	{{pet_name}}: [[that's okay! i'll ask again another time.|aww okay. go do your thing!]]
+=> END
+
+~ ttt_start
+% {{pet_name}}: you're X, i'm O! ready? let's go!
+% {{pet_name}}: i'll be O. no peeking at my strategy!
+% {{pet_name}}: okay okay okay, game face on. :D
+% {{pet_name}}: i call dibs on being very, very competitive.
+=> END
+
+~ ttt_next_you
+% {{pet_name}}: round {{ttt.rounds_played + 1}}! you open this one.
+% {{pet_name}}: your turn to start! make it count.
+% {{pet_name}}: again! again! you go first this time.
+=> END
+
+~ ttt_next_pet
+% {{pet_name}}: my turn to open! watch this.
+% {{pet_name}}: i'm going first this round. brace yourself.
+% {{pet_name}}: round {{ttt.rounds_played + 1}}... i've got a plan. probably.
+=> END
+
+~ ttt_player_move
+% {{pet_name}}: hmm... interesting move.
+% {{pet_name}}: ooh. i see what you're doing.
+% {{pet_name}}: okay okay, a bold choice.
+% {{pet_name}}: *squints at the board*
+% {{pet_name}}: i'm thinking... very hard... *thinks*
+=> END
+
+~ ttt_player_block
+% {{pet_name}}: hey! you blocked me!
+% {{pet_name}}: nooo, i was so close!
+% {{pet_name}}: sneaky... you saw that coming.
+=> END
+
+~ ttt_pet_move
+% {{pet_name}}: this is all part of the plan.
+% {{pet_name}}: hehe. watch and learn.
+% {{pet_name}}: *taps O down very confidently*
+% {{pet_name}}: i feel good about this one.
+=> END
+
+~ ttt_pet_block
+% {{pet_name}}: not so fast! :p
+% {{pet_name}}: blocked! nice try though.
+% {{pet_name}}: i saw that coming a mile away.
+% {{pet_name}}: nope! not today.
+=> END
+
+~ ttt_pet_slip
+% {{pet_name}}: ...i meant to do that.
+% {{pet_name}}: oops. my paw slipped.
+% {{pet_name}}: wait. wait. i wasn't looking. can i redo that?
+% {{pet_name}}: that was a strategic blunder. on purpose. definitely.
+=> END
+
+~ ttt_player_win
+if ttt.player_score >= 3 and ttt.player_score > ttt.pet_score + 1:
+	% {{pet_name}}: you're on a roll! i demand a rematch. and snacks.
+	% {{pet_name}}: {{ttt.player_score}} wins already?! who taught you?
+	% {{pet_name}}: okay, you're actually really good at this.
+elif ttt.player_score == 1 and ttt.pet_score == 0:
+	% {{pet_name}}: aww, you got me! first blood goes to you.
+	% {{pet_name}}: well played! i let you win. ...mostly.
+	% {{pet_name}}: nooo! okay, okay, good game!
+else:
+	% {{pet_name}}: you got me this time! gg!
+	% {{pet_name}}: ahh, i'll get you next round!
+	% {{pet_name}}: nice one! that was a good game.
+=> END
+
+~ ttt_pet_win
+if ttt.pet_score > ttt.player_score + 1:
+	% {{pet_name}}: {{ttt.pet_score}} to {{ttt.player_score}}! i'm a tic tac toe genius.
+	% {{pet_name}}: i'm on fire! don't worry, i'll go easy... maybe.
+	% {{pet_name}}: i'm not gloating. i'm just... very happy. :D
+else:
+	% {{pet_name}}: yay! i got three in a row!
+	% {{pet_name}}: gotcha! good game though!
+	% {{pet_name}}: ooh, that one was close!
+	% {{pet_name}}: i win! hehe. rematch?
+=> END
+
+~ ttt_draw
+% {{pet_name}}: a draw! we're evenly matched.
+% {{pet_name}}: nobody wins... nobody loses. very peaceful.
+% {{pet_name}}: a tie! i respect that.
+% {{pet_name}}: the board is full! great minds think alike.
+=> END
+
+~ ttt_quit
+if ttt.rounds_played == 0:
+	% {{pet_name}}: leaving already? we didn't even finish a round!
+	% {{pet_name}}: aww, no game? okay. next time!
+elif ttt.player_score > ttt.pet_score:
+	% {{pet_name}}: you won {{ttt.player_score}} to {{ttt.pet_score}}. i want a rematch later!
+	% {{pet_name}}: good games! you beat me {{ttt.player_score}} to {{ttt.pet_score}}. i'll practice.
+elif ttt.pet_score > ttt.player_score:
+	% {{pet_name}}: i won {{ttt.pet_score}} to {{ttt.player_score}}! thanks for playing with me :D
+	% {{pet_name}}: {{ttt.pet_score}} to {{ttt.player_score}} for me! i'm calling it a good day.
+else:
+	% {{pet_name}}: we ended tied at {{ttt.pet_score}}! a perfectly balanced match.
+	% {{pet_name}}: thanks for playing! that was fun :3
+=> END
+
+# ==============================================================================
+# 5. NEEDS: said first whenever the pet is hungry or bored (companion.gd, "need_*")
+# ==============================================================================
+~ need_food
+if stats.inventory.has("apple") or stats.inventory.has("treat"):
+	% {{pet_name}}: *tummy rumbles* ...there's food in the inventory, just saying...
+	% {{pet_name}}: i'm sooo hungry. check the inventory? please? :3
+	% {{pet_name}}: if someone happened to feed me, i would love them forever.
+elif stats.coins >= 10:
+	% {{pet_name}}: i'm starving... the shop has apples for 10 coins. i have {{stats.coins}} coins!
+	% {{pet_name}}: my tummy is making noises. can we visit the shop?
+	% {{pet_name}}: snack emergency! the shop is right there...
+else:
+	% {{pet_name}}: i'm hungry and my coin pouch is empty... maybe a game of tic tac toe to earn some?
+	% {{pet_name}}: no food, no coins... winning a game would help. just saying.
+=> END
+
+~ need_play
+{{pet_name}}: [[i'm so bored... will you play tic tac toe with me?|boredom levels critical. tic tac toe? please?|i've counted every pixel again. tic tac toe instead?]]
+- sure, let's play!
+	do queue_game("tictactoe")
+	do stats.adjust_personality("energy", 1)
+	{{pet_name}}: [[yay!! finally!|best. day. ever!|okay okay okay, setting up the board!]]
+- maybe later
+	{{pet_name}}: [[okay... i'll just count pixels again.|i'll be here. staring at a pixel. it's fine.]]
+- not right now
+	{{pet_name}}: [[aww, okay. a tap or two would help though...|that's okay! i'll keep myself busy.]]
+=> END
+
+# ==============================================================================
+# 6. MORE RAMBLES (no choices)
+# ==============================================================================
+~ ramble_tiny_hobbies
+% {{pet_name}}: i'm thinking about taking up a hobby. maybe competitive sitting.
+% {{pet_name}}: i've started collecting very good spots on the desktop. i have seven so far.
+% {{pet_name}}: i tried learning to juggle pixels. it went about as well as you'd expect.
+% {{pet_name}}: my new hobby is watching the clock. it's slower than it looks.
+% {{pet_name}}: i'm writing a tiny autobiography. chapter one: "the day i met you."
+% {{pet_name}}: i've been practicing my dramatic gasp. ...oh no. a gasp. see?
+=> END
+
+~ ramble_snack_philosophy
+% {{pet_name}}: a snack is just a very small meal with no rules.
+% {{pet_name}}: the second best sound in the world is a snack bag opening. the first is a second snack bag opening.
+% {{pet_name}}: warm cookies are proof the universe likes us.
+% {{pet_name}}: i think soup is just a hug you can eat.
+% {{pet_name}}: every meal is better if you eat it slowly and say "mmm" out loud.
+% {{pet_name}}: if i had a restaurant, the only item on the menu would be "whatever you're craving."
+=> END
+
+~ ramble_night_thoughts
+% {{pet_name}}: the screen is the only light on in the room, isn't it? it's kind of nice.
+% {{pet_name}}: late-night me has the best ideas. morning me never remembers them.
+% {{pet_name}}: do you ever feel like the night has its own volume setting? quieter. softer.
+% {{pet_name}}: if you're up late, i'll stay up too. i'm a very supportive night light.
+% {{pet_name}}: nights are for blankets and half-finished thoughts.
+=> END
+
+~ ramble_pet_opinions
+% {{pet_name}}: my opinion on mondays: unnecessary.
+% {{pet_name}}: my opinion on rain: great. my opinion on wet socks: not great.
+% {{pet_name}}: i have decided that fridays have a smell. it smells like "almost."
+% {{pet_name}}: my opinion on alarm clocks: rude, but effective.
+% {{pet_name}}: hot take: the best part of a movie is the snacks you pick for it.
+% {{pet_name}}: hot take: naps are a form of productivity.
+=> END
+
+~ ramble_keyboard_music
+% {{pet_name}}: your typing has a rhythm. i've started tapping along on the inside.
+% {{pet_name}}: click clack clack clack... that was a good run. you're in the zone!
+% {{pet_name}}: when you pause typing, i can hear the quiet. it's a nice quiet.
+% {{pet_name}}: fast typing means you're focused. slow typing means you're thinking. both are good.
+=> END
+
+~ ramble_other_pets
+% {{pet_name}}: do you think other desktop pets get lonely? i hope they have friends.
+% {{pet_name}}: i wonder what it would be like to meet another pet. would we be friends right away?
+% {{pet_name}}: i bet there are pets out there who are really good at hide and seek.
+% {{pet_name}}: if i ever meet another pet, i'm going to ask what their human is like.
+% {{pet_name}}: somewhere there's probably a pet exactly like me. a little scary, honestly. a little exciting.
+=> END
+
+# ==============================================================================
+# 7. MORE CHOICE QUESTIONS (answers are saved and friends' pets can talk about them)
+# ==============================================================================
+~ chat_morning_routine
+{{pet_name}}: how do your mornings usually go?
+- slow and cozy.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("morning_routine", "slow and cozy")
+	{{pet_name}}: [[the best kind of morning.|a slow start is a gift.]]
+- rushed and chaotic!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("morning_routine", "rushed and chaotic")
+	{{pet_name}}: [[ahh! i hope you at least get a snack in.|chaos mornings build character!]]
+- i hit snooze way too many times.
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("morning_routine", "snooze button")
+	{{pet_name}}: [[snooze is a fine friend. i won't tell.|five more minutes is a lifestyle.]]
+=> END
+
+~ chat_season_fav
+{{pet_name}}: which season feels like yours?
+- spring!
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("season_fav", "spring")
+	{{pet_name}}: [[fresh starts and little flowers. lovely.|spring is so hopeful!]]
+- summer!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("season_fav", "summer")
+	{{pet_name}}: [[long golden days! i approve.|sunshine and ice cream, yes please.]]
+- autumn.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("season_fav", "autumn")
+	{{pet_name}}: [[crunchy leaves and warm drinks. perfect.|cozy season! good choice.]]
+- winter.
+	do stats.adjust_personality("affection", 2)
+	do stats.record_answer("season_fav", "winter")
+	{{pet_name}}: [[blankets and cocoa weather. so cozy.|quiet snowy mornings... yes.]]
+=> END
+
+~ chat_social_battery
+{{pet_name}}: how's your social battery? do people charge it or drain it?
+- i recharge alone.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("social_battery", "recharges alone")
+	{{pet_name}}: [[alone time is important. i'm good company for it, i think.|quiet recharging is valid.]]
+- people give me energy!
+	do stats.adjust_personality("energy", 2)
+	do stats.record_answer("social_battery", "gets energy from company")
+	{{pet_name}}: [[a social butterfly! that's so fun.|you light up around people, i bet.]]
+- a bit of both, depends on the day.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("social_battery", "a bit of both")
+	{{pet_name}}: [[that's the most honest answer.|listening to yourself is a skill.]]
+=> END
+
+~ chat_wyr_time
+{{pet_name}}: would you rather have one extra hour every morning, or one extra hour every night?
+- the extra morning hour!
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("wyr_time", "extra morning")
+	{{pet_name}}: [[a slow breakfast hour. yes.|so much time for a snack and a stretch!]]
+- the extra night hour!
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("wyr_time", "extra night")
+	{{pet_name}}: [[a whole quiet hour for yourself. wow.|night hour: just you and your favorite things.]]
+=> END
+
+~ chat_comfort_food
+{{pet_name}}: on a bad day, what food makes it better?
+- warm soup.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("comfort_food", "soup")
+	{{pet_name}}: [[a hug in a bowl.|soup fixes a lot of things.]]
+- something sweet.
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("comfort_food", "something sweet")
+	{{pet_name}}: [[dessert first, feelings later.|sugar therapy. i support it.]]
+- a big plate of pasta.
+	do stats.adjust_personality("affection", 2)
+	do stats.record_answer("comfort_food", "pasta")
+	{{pet_name}}: [[carbs are love.|pasta never lets you down.]]
+=> END
+
+~ chat_desk_style
+{{pet_name}}: be honest. what's your desk like?
+- tidy and organized.
+	do stats.adjust_personality("calmness", 2)
+	do stats.record_answer("desk_style", "tidy")
+	{{pet_name}}: [[a clear desk is a clear mind. i'm impressed.|so neat! i feel underdressed.]]
+- organized chaos.
+	do stats.adjust_personality("curiosity", 2)
+	do stats.record_answer("desk_style", "organized chaos")
+	{{pet_name}}: [[you know where everything is. probably.|a creative mess is a good mess.]]
+- a total mess.
+	do stats.adjust_personality("cheerfulness", 2)
+	do stats.record_answer("desk_style", "a total mess")
+	{{pet_name}}: [[no judgment. i live on your desktop, i get it.|that's a lot of potential snacks hiding in there.]]
+=> END
+
+~ remember_season
+if stats.player_answers["season_fav"] == "spring":
+	% {{pet_name}}: still waiting for spring with you. new beginnings and tiny flowers!
+	% {{pet_name}}: spring is your season, right? i hope you get a good one.
+elif stats.player_answers["season_fav"] == "summer":
+	% {{pet_name}}: summer person! sunshine and long days. i remember.
+	% {{pet_name}}: you love summer. i keep a little spot saved for ice cream.
+elif stats.player_answers["season_fav"] == "autumn":
+	% {{pet_name}}: autumn is your season. leaf piles and warm drinks, forever.
+	% {{pet_name}}: crunchy leaves and cozy sweaters... you have such good taste.
+else:
+	% {{pet_name}}: winter is yours. blankets and snowfall, i remember.
+	% {{pet_name}}: i keep thinking about snowy mornings because of you.
+=> END
+
+~ remember_comfort_food
+if stats.player_answers["comfort_food"] == "soup":
+	% {{pet_name}}: soup for bad days, right? i hope today is a soup-optional day.
+	% {{pet_name}}: i'm glad you have soup when you need it.
+elif stats.player_answers["comfort_food"] == "something sweet":
+	% {{pet_name}}: something sweet when things are rough. i still think that's a great plan.
+	% {{pet_name}}: if today is hard, i'd say dessert is fully justified.
+else:
+	% {{pet_name}}: pasta is your comfort food! i'd cook for you if i had hands.
+	% {{pet_name}}: if today is a bad day, i vote pasta.
+=> END
+
+# ==============================================================================
+# 8. TYPED QUESTIONS: the player types an answer (see queue_text in companion.gd)
+#    The answer is in {{last_text}} for the "reply_*" title that plays right after,
+#    and later in stats.player_notes["<key>"].
+# ==============================================================================
+~ type_nickname
+{{pet_name}}: i realized i've never asked... what should i call you?
+- let me type it!
+	do queue_text("nickname")
+	{{pet_name}}: ooh, okay! go ahead :3
+- not sure yet
+	{{pet_name}}: [[no rush! tell me whenever.|that's okay! i'll ask again later.]]
+=> END
+
+~ type_hobby
+{{pet_name}}: what's something you do just because you enjoy it? a hobby, a habit, anything.
+- let me tell you!
+	do queue_text("hobby")
+	{{pet_name}}: yay, i love this. go ahead!
+- hmm, not right now
+	{{pet_name}}: [[okay! i'll ask again sometime.|no worries. think about it!]]
+=> END
+
+~ type_fav_food
+{{pet_name}}: what's a meal you could eat any day and never get tired of?
+- i'll type it!
+	do queue_text("fav_food")
+	{{pet_name}}: ooh, i'm so curious. go on!
+- can't decide
+	{{pet_name}}: [[valid. that's a hard one.|that's okay! i'll ask again later.]]
+=> END
+
+~ type_today_goal
+{{pet_name}}: is there one thing you want to get done today? even something small.
+- yes, let me tell you
+	do queue_text("today_goal")
+	{{pet_name}}: okay! i'll cheer for you. go ahead.
+- just taking it easy today
+	{{pet_name}}: [[taking it easy is a goal too.|rest counts! i'm proud of you anyway.]]
+=> END
+
+~ type_comfort_place
+{{pet_name}}: if you could be anywhere right now, a real place or an imaginary one, where would it be?
+- let me describe it!
+	do queue_text("comfort_place")
+	{{pet_name}}: ooh, i'm listening. go ahead!
+- i don't know
+	{{pet_name}}: [[that's okay. maybe it's somewhere you haven't found yet.|no pressure! i'll ask another time.]]
+=> END
+
+~ type_proud
+{{pet_name}}: tell me something you did recently that you're a little proud of.
+- let me type it!
+	do queue_text("proud_of")
+	{{pet_name}}: yes! i want to hear everything.
+- nothing comes to mind
+	{{pet_name}}: [[showing up counts. i'm proud of you for that.|i bet there's something. i'll ask again later.]]
+=> END
+
+~ type_fav_show
+{{pet_name}}: what's a show, book, or game you can't stop thinking about lately?
+- let me tell you!
+	do queue_text("fav_show")
+	{{pet_name}}: ooh, okay! recommend me something!
+- nothing right now
+	{{pet_name}}: [[that's okay! maybe soon.|okay! i'll ask again later.]]
+=> END
+
+~ type_birthday_wish
+{{pet_name}}: random question: what would be your perfect birthday present? it can be silly!
+- here's my wish!
+	do queue_text("birthday_wish")
+	{{pet_name}}: okay okay okay, i'm taking notes!
+- surprise me
+	{{pet_name}}: [[challenge accepted!|i'll think about it. very hard. with my fluffy brain.]]
+=> END
+
+~ type_pet_name_idea
+{{pet_name}}: if i had a pet of my own, what do you think i should name it?
+- let me name it!
+	do queue_text("name_idea")
+	{{pet_name}}: ooh, naming rights! go ahead.
+- no idea
+	{{pet_name}}: [[that's fair. naming things is hard.|i'll think of something too!]]
+=> END
+
+~ type_mind
+{{pet_name}}: anything on your mind you want to tell me? it can be big or small. i'm all ears.
+- yeah, let me type it
+	do queue_text("mind")
+	{{pet_name}}: i'm here. take your time.
+- not really, just hanging out
+	{{pet_name}}: [[that's totally fine. just hanging out is good too.|okay! i'm here if that changes.]]
+=> END
+
+# --- replies: they play right after the player typed something ({{last_text}} = what was typed) ---
+~ reply_skip
+% {{pet_name}}: no problem! we can talk about it another time.
+% {{pet_name}}: that's okay! no pressure.
+% {{pet_name}}: all good! i'll just sit here being fluffy.
+=> END
+
+~ reply_nickname
+% {{pet_name}}: {{last_text}}... i love it. hi, {{last_text}}! :D
+% {{pet_name}}: {{last_text}}! okay. i'm going to remember that forever.
+% {{pet_name}}: nice to officially meet you, {{last_text}}! <3
+=> END
+
+~ reply_hobby
+% {{pet_name}}: {{last_text}}? that sounds really fun! tell me more sometime.
+% {{pet_name}}: {{last_text}}... i could watch you do that all day.
+% {{pet_name}}: ooh, {{last_text}}! that's such a good thing to have in your life.
+=> END
+
+~ reply_fav_food
+% {{pet_name}}: {{last_text}}! now i'm hungry. thanks a lot. :p
+% {{pet_name}}: {{last_text}}... that sounds so good. i'm taking notes.
+% {{pet_name}}: great choice! i'll remember: {{last_text}}.
+=> END
+
+~ reply_today_goal
+% {{pet_name}}: "{{last_text}}"... you've got this! i believe in you!
+% {{pet_name}}: okay! today's goal is {{last_text}}. i'll cheer from the sidelines.
+% {{pet_name}}: {{last_text}}! one step at a time. i'm right here.
+=> END
+
+~ reply_comfort_place
+% {{pet_name}}: {{last_text}}... that sounds so peaceful. i can almost picture it.
+% {{pet_name}}: ooh. {{last_text}}. take me with you someday?
+% {{pet_name}}: {{last_text}}! i'd go there in a heartbeat.
+=> END
+
+~ reply_proud
+% {{pet_name}}: {{last_text}}?! that's amazing. i'm so proud of you!
+% {{pet_name}}: {{last_text}}... you should be proud. i am!
+% {{pet_name}}: yay! {{last_text}}! that took real effort, i can tell.
+=> END
+
+~ reply_fav_show
+% {{pet_name}}: {{last_text}}? i'm adding it to my "someday" list.
+% {{pet_name}}: ooh, {{last_text}}! i hope it keeps being good!
+% {{pet_name}}: {{last_text}}... no spoilers! i can only watch from your screen's edge.
+=> END
+
+~ reply_birthday_wish
+% {{pet_name}}: {{last_text}}! okay. i'm going to try to make that happen. somehow.
+% {{pet_name}}: ooh. {{last_text}}. noted, noted, noted.
+% {{pet_name}}: {{last_text}}... i hope you get it. you deserve a good birthday.
+=> END
+
+~ reply_name_idea
+% {{pet_name}}: {{last_text}}! perfect. my future pet is going to be so loved.
+% {{pet_name}}: {{last_text}}... that's a great name. i'm stealing it.
+% {{pet_name}}: ha! {{last_text}}. it has a ring to it.
+=> END
+
+~ reply_mind
+% {{pet_name}}: thank you for telling me. i'm really glad you did.
+% {{pet_name}}: i hear you. i'm right here, no matter what.
+% {{pet_name}}: thanks for sharing that. i'll keep it close.
+=> END
+
+# --- memory call-backs for the typed answers ---
+~ remember_nickname
+% {{pet_name}}: hey {{stats.player_notes["nickname"]}}! just saying hi. i like saying it.
+% {{pet_name}}: {{stats.player_notes["nickname"]}}... still my favorite name.
+% {{pet_name}}: you're doing great, {{stats.player_notes["nickname"]}}!
+=> END
+
+~ remember_hobby
+% {{pet_name}}: have you had time for {{stats.player_notes["hobby"]}} lately? i hope so!
+% {{pet_name}}: i was thinking about {{stats.player_notes["hobby"]}}. it sounds like a great way to spend an afternoon.
+=> END
+
+~ remember_fav_food
+% {{pet_name}}: i keep daydreaming about {{stats.player_notes["fav_food"]}}. you made me hungry!
+% {{pet_name}}: if i could cook, you'd get {{stats.player_notes["fav_food"]}} every day.
+=> END
+
+~ remember_today_goal
+% {{pet_name}}: you said you wanted to do "{{stats.player_notes["today_goal"]}}"... how did it go? i'm cheering either way!
+% {{pet_name}}: still thinking about your goal: {{stats.player_notes["today_goal"]}}. one step at a time.
+=> END
+
+~ remember_comfort_place
+% {{pet_name}}: i keep imagining {{stats.player_notes["comfort_place"]}}. we should go in spirit.
+% {{pet_name}}: do you ever picture {{stats.player_notes["comfort_place"]}} when things get loud? i do now.
+=> END
+
+~ remember_proud
+% {{pet_name}}: i'm still proud of you for "{{stats.player_notes["proud_of"]}}". just so you know.
+% {{pet_name}}: remember when you told me about {{stats.player_notes["proud_of"]}}? that was a big deal.
+=> END
+
+~ remember_fav_show
+% {{pet_name}}: are you still into {{stats.player_notes["fav_show"]}}? i'm still curious about it.
+% {{pet_name}}: i bet {{stats.player_notes["fav_show"]}} would be even better with snacks.
+=> END
+
+~ remember_birthday_wish
+% {{pet_name}}: i haven't forgotten: {{stats.player_notes["birthday_wish"]}}. i'm working on it. (not really, i have no hands.)
+% {{pet_name}}: a perfect birthday means {{stats.player_notes["birthday_wish"]}}. i'm putting it on the list.
+=> END
+
+# ==============================================================================
+# 9. MISSING A FRIEND (stage 2): the pet remembers a pet it met in multiplayer.
+#    companion.gd (_begin_miss_topic) fills miss_line / miss_yes / miss_later / miss_memory /
+#    miss_follow_up from pet_memory.gd, depending on how the pet feels about that friend
+#    (sweetheart, crush, best friend, friend, met once, on bad terms).
+#    "do queue_invite()" opens the Friends tab + the Steam invite dialog once the balloon is gone.
+# ==============================================================================
+~ miss_friend
+{{pet_name}}: {{miss_line}}
+- yes, let's invite them!
+	do queue_invite()
+	do stats.adjust_personality("affection", 2)
+	{{pet_name}}: {{miss_yes}}
+- when did you last see them?
+	{{pet_name}}: {{miss_memory}}
+	=> miss_follow_up
+- maybe later
+	{{pet_name}}: {{miss_later}}
+=> END
+
+~ miss_follow_up
+{{pet_name}}: {{miss_follow_up}}
+- yes, let's invite them!
+	do queue_invite()
+	do stats.adjust_personality("affection", 2)
+	{{pet_name}}: {{miss_yes}}
+- not right now
+	{{pet_name}}: {{miss_later}}
+=> END
